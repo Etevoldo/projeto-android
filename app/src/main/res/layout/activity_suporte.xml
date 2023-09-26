@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="80px">
+
+    <TextView
+        android:textSize="80px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Codigo livro" />
+    <TextView
+        android:layout_marginTop="100px"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:id="@+id/Suporte"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim massa, ultrices nec rutrum et, volutpat eget lorem. Aliquam erat volutpat. Mauris lobortis rutrum dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sem viverra interdum placerat. Nulla eu vehicula leo, maximus eleifend metus. Vivamus quis felis commodo, faucibus justo at, aliquet sapien. Ut ut nulla velit. Nam ex massa, dapibus "
+        android:textSize="16dp"
+        android:justificationMode="inter_word"/>
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:layout_width="280dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ebiblio"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Voltar"
+        android:id="@+id/btScanVoltar"
+        android:layout_margin="30px"/>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">E-Biblio</string>
+    <string-array name="cores">
+        <item>Rosa</item>
+        <item>preto</item>
+        <item>cinza</item>
+        <item>azul</item>
+        <item>amarelo</item>
+    </string-array>
+</resources>
