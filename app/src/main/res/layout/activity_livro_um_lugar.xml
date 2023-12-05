@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3fbcef"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Um lugar bem longe daqui"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:background="@color/green"/>
+        <ImageView
+            android:id="@+id/imgOdisseia2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginVertical="50dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/umlugar" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imgOdisseia"
+            android:layout_toEndOf="@+id/imgOdisseia"
+            android:text="Ao mesmo tempo uma ode à natureza, um emocionante romance de formação e uma surpreendente história de mistério, Um lugar bem longe daqui relembra que somos moldados pela criança que fomos um dia e que estamos todos sujeitos à beleza e à violência dos segredos que a natureza guarda.
+            Delia Owens"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="60px"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btReservarUmlugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/dark_blue"
+                android:text="Reservar"
+                android:textColor="@android:color/black"
+                android:textSize="80px" />
+            <Button
+                android:id="@+id/btVoltarBiblioteca3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/dark_blue"
+                android:text="Voltar"
+                android:textColor="@android:color/black"
+                android:textSize="80px"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -12,7 +12,7 @@ import org.w3c.dom.Text;
 
 import java.util.List;
 
-public class exemplarListaAdapter extends ArrayAdapter<exemplar> {
+public class exemplarListaAdapter extends ArrayAdapter<exemplar>{
     private Context context;
     private List<exemplar> listaExemplares = null;
     public exemplarListaAdapter(Context context, List<exemplar> listaExemplares) {

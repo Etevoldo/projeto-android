@@ -8,7 +8,7 @@ import android.widget.Toast;
 public class CriaBanco extends SQLiteOpenHelper {
 
     private static final String NOME_BANCO = "banco_biblioteca.db";
-    private static final int VERSAO = 15;
+    private static final int VERSAO = 16;
     public CriaBanco(Context context) {
         super(context, NOME_BANCO, null, VERSAO);
     }
@@ -38,7 +38,6 @@ public class CriaBanco extends SQLiteOpenHelper {
                 + "idPedido integer primary key autoincrement,"
                 + "idExemplar integer,"
                 + "ra text,"
-                + "isbn text,"
                 + "dataEntrega text,"
                 + "dataPedido text,"
                 + "CONSTRAINT fk_PEDIDO_ID FOREIGN KEY (idExemplar)"

@@ -13,6 +13,12 @@
         android:theme="@style/Theme.Portfolio_android"
         tools:targetApi="31">
         <activity
+            android:name=".livroUmLugar"
+            android:exported="false" />
+        <activity
+            android:name=".livroOdisseia"
+            android:exported="false" />
+        <activity
             android:name=".listaExemplares"
             android:exported="false" />
         <activity
@@ -25,7 +31,7 @@
             android:name=".cadastre"
             android:exported="false" />
         <activity
-            android:name=".activity_titulo_livro"
+            android:name=".livroEurobo"
             android:exported="false" />
         <activity
             android:name=".suporte"

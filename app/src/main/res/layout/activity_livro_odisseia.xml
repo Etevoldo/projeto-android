@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3fbcef"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="2001, Uma Odisséia no espaço"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:background="@color/green"/>
+        <ImageView
+            android:id="@+id/imgOdisseia2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginVertical="50dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/umaodisseia" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imgOdisseia"
+            android:layout_toEndOf="@+id/imgOdisseia"
+            android:text="Nos primórdios da humanidade, quando a fome e os predadores ameaçavam a raça humana, chega à Terra um objeto inusitado, inacessível à limitada compreensão da mente pré-histórica, mas que influencia os homens a descobrir coisas que permitem a sua própria evolução.
+Milhões de anos depois, a descoberta de um monólito soterrado na Lua deixa os cientistas perplexos. Para investigar esse mistério, a Terra envia ao espaço uma equipe altamente treinada e HAL 9000, uma inteligência artificial responsável pelo funcionamento da nave e pela segurança dos tripulantes. Porém, o surgimento de pequenas falhas levanta a suspeita de que há algo errado com a missão.
+Escrito por Arthur C. Clarke com o intuito de expandir a história criada com Stanley Kubrick para o cinema, 2001: uma odisseia no espaço desconcerta o leitor e o conduz a um futuro alternativo da história humana."
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="60px"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <Button
+                android:id="@+id/btReservarOdisseia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/dark_blue"
+                android:text="Reservar"
+                android:textColor="@android:color/black"
+                android:textSize="80px"/>
+            <Button
+                android:id="@+id/btVoltarBiblioteca2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/dark_blue"
+                android:text="Voltar"
+                android:textColor="@android:color/black"
+                android:textSize="80px"/>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

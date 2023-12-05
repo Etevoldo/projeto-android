@@ -16,8 +16,7 @@ public class meusLivros extends AppCompatActivity {
 
 
         BancoController bd = new BancoController(getBaseContext());
-
-        Cursor dados = bd.carregaDadosExemplar("00001");
+        Cursor dados = bd.consultarExemplar(1);
         if (!dados.moveToFirst()) {
             bd.insereLivro("00001", "Eu Robô", "Isaac Assimov");
             bd.insereLivro("00002", "2001", "Arthur C. Clarke");
@@ -26,7 +25,8 @@ public class meusLivros extends AppCompatActivity {
             bd.insereExemplar("00001", "11/10/10000", true);
             bd.insereExemplar("00001", "11/10/10000", true);
             bd.insereExemplar("00002", "15/10/10000", true);
-            bd.insereExemplar("00003", "15/10/10000", true);
+            bd.insereExemplar("00003", "15/10/1000", true);
+            bd.insereExemplar("00003", "15/10/1000", true);
             Toast.makeText(getApplicationContext(), "novos livros carregados", Toast.LENGTH_LONG).show();
         }
         else {

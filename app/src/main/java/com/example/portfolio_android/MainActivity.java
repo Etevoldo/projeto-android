@@ -60,8 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 parameters.putString("senha", senha);
                 parameters.putInt("numeroDePedidos", numeroDePedidos);
                 intent.putExtras(parameters);
-                String msg = "65 mainActivity";
-                Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
                 startActivity(intent);
             } else {
                 Toast.makeText(getApplicationContext(), "RA e/ou senha incorretos"
