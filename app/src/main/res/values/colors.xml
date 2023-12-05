@@ -4,5 +4,9 @@
     <color name="white">#FFFFFFFF</color>
     <color name="cyan" >#FF3FBBEE</color>
     <color name="cyanDark" >#FF0C69B0</color>
+    <color name="light_blue">#3fbcef</color>
+    <color name="dark_blue">#044476</color>
+    <color name="green">#79c471</color>
+    <color name="ice">#fffcd0</color>
 
 </resources>

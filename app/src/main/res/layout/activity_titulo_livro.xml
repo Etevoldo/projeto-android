@@ -25,19 +25,19 @@
         android:layout_marginVertical="20dp"
         android:layout_marginTop="70px"
         android:layout_weight="1"
-        android:src="@drawable/EUROBO" />
+        android:src="@drawable/eurobocapa" />
     <TextView
         android:id="@+id/txtEurobo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:text="Eu, Robô é um conjunto de nove contos que relatam a evolução dos autômatos através do tempo. É neste livro que são apresentadas as célebres Três Leis da Robótica. Inicia-se com uma entrevista com a Dra. Susan Calvin, uma psicóloga roboticista da U.S Robots & Mechanical. Ela é o fio condutor da obra, responsável por contar os relatos de seu trabalho e também da evolução dos autômatos. A edição traz um posfácio escrito pelo próprio autor sobre sua história de amor com os robôs, tão comuns em sua obra."
+        android:text="Um dos maiores clássicos da literatura de ficção científica, Eu, Robô, escrito pelo Bom Doutor, \nIsaac Asimov \nFoi publicado originalmente em 1950"
         android:textAlignment="center"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:textColor="@color/white"
-        android:textSize="50px"/>
+        android:textColor="@color/black"
+        android:textSize="20dp"/>
     <Button
         android:id="@+id/btVoltar"
         android:layout_width="wrap_content"

@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:layout_gravity="end|right"
         android:visibility="visible"
-        android:icon="@drawable/ic_android_black_24dp"
         android:background="#044476"/>
 
     <TextView
@@ -44,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Login"
+        android:text="RA"
         android:textColor="@color/black"
         android:textSize="80px" />
     <EditText
@@ -56,6 +55,7 @@
         android:layout_marginRight="150px"
         android:layout_marginTop="1px"
         android:background="@color/white"
+        android:textColor="@color/black"
         android:inputType="text"
         android:textSize="80px" />
     <TextView
@@ -73,6 +73,7 @@
         android:layout_marginLeft="150px"
         android:layout_marginRight="150px"
         android:background="@color/white"
+        android:textColor="@color/black"
         android:inputType="text"
         android:textSize="80px" />
     <TextView
@@ -85,12 +86,23 @@
         android:textSize="70px" />
 
     <Button
+        android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginVertical="40dp"
+        android:layout_marginVertical="10dp"
         android:backgroundTint="#044476"
         android:textColor="@android:color/black"
         android:text="Login"
+        android:textSize="90px" />
+    <Button
+        android:id="@+id/btnCadastre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginVertical="20dp"
+        android:backgroundTint="#044476"
+        android:textColor="@android:color/black"
+        android:text="Cadastre-se"
         android:textSize="90px" />
 </LinearLayout>

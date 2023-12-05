@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class activity_biblioteca extends AppCompatActivity {
+public class bibliotecaLivros extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_biblioteca);
+        setContentView(R.layout.activity_biblioteca_livros);
     }
 }

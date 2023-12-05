@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyan"
+    android:orientation="vertical"
+    android:layout_margin="80px">
+
+    <TextView
+        android:id="@+id/txtNomeMeusLivros"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="50dp"
+        android:textSize="30dp"
+        android:text="userName"/>
+
+    <ListView
+        android:id="@+id/listPessoas"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:divider="#FFECEC"
+        android:dividerHeight="2dp" />
+
+</LinearLayout>
