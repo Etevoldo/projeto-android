@@ -62,7 +62,7 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
                 item.setIdExemplar(dados.getInt(1));
                 item.setRa(dados.getString(2));
                 item.setDataEntrega(dados.getString(3));
-                item.setIdPedido(dados.getInt(4));
+                item.setDataPedido(dados.getString(4));
                 lista.add(item);
             } while (dados.moveToNext()); //retorna 0 quando acaba
         }
