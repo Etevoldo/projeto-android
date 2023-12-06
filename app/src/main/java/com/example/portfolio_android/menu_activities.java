@@ -15,8 +15,8 @@ import org.w3c.dom.Text;
 public class menu_activities extends AppCompatActivity implements View.OnClickListener {
 
     String ra, nome, email, senha , msg;
-    private static final String admRA = "321";
     int numeroDePedidos;
+    private static final String admRA = "321";
     TextView txtnomeUsuarioMenu;
     Button btBiblioteca, btEscanear, btMeusLivros, btLogOut, btSuporte;
     @SuppressLint("MissingInflatedId")
