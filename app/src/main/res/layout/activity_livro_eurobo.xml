@@ -1,50 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#3fbcef"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/txtFig"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="#044476"
-        android:gravity="center"
-        android:text="Eu, Robô"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#fffcd0"
-        android:textSize="80px" />
-    <ImageView
-        android:id="@+id/imgEurobo"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginVertical="20dp"
-        android:layout_marginTop="70px"
-        android:layout_weight="1"
-        android:src="@drawable/eurobocapa" />
-    <TextView
-        android:id="@+id/txtEurobo"
+    android:layout_height="wrap_content"
+    android:layout_width="wrap_content">
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:layout_weight="1"
-        android:text="Um dos maiores clássicos da literatura de ficção científica, Eu, Robô, escrto pelo\nBom Doutor, Isaac Asimov \nFoi publicado originalmente em 1950"
-        android:textAlignment="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:textColor="@color/black"
-        android:textSize="20dp"/>
-    <Button
-        android:id="@+id/btReservar1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginVertical="30dp"
-        android:text="Reservar"
-        android:backgroundTint="#044476"
-        android:textSize="70px"/>
-</LinearLayout>
+        android:background="#3fbcef"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Eu, Robô"
+            android:textColor="@color/black"
+            android:textSize="30dp"
+            android:background="@color/green"/>
+        <ImageView
+            android:id="@+id/imgEurobo2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="50dp"
+            android:layout_marginLeft="100dp"
+            android:src="@drawable/eurobocapa" />
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imgEurobo"
+            android:layout_toEndOf="@+id/imgEurobo"
+            android:text="Um dos maiores clássicos da literatura de ficção científica. Eu, Robô é um conjunto de nove contos que relatam a evolução dos autômatos através do tempo. É neste livro que são apresentadas as célebres Três Leis da Robótica: os princípios que regem o comportamento dos robôs e que mudaram definitivamente a percepção que se tem sobre eles na própria ciência."
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/white"
+            android:textSize="60px" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btReservarlivro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="20dp"
+                android:background="#044476"
+                android:text="Reservar"
+                android:textColor="@android:color/black"
+                android:textSize="80px"/>
+            <Button
+                android:id="@+id/btVoltarBiblioteca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#044476"
+                android:text="Voltar"
+                android:textColor="@android:color/black"
+                android:textSize="80px"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
