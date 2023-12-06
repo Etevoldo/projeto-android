@@ -73,7 +73,6 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
     }
 
     public void onClick(View view){
-        showToast("something lol", getBaseContext());
 
         int idExemplar = Integer.parseInt(edtEntregaConfirma.getText().toString());
 
@@ -83,6 +82,7 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
 
         if (data.moveToFirst()){
             bd.encerrarPedidosPorId(idExemplar); // perigo: encerra todos!
+            showToast("Pedido encerrado com Sucesso!", getBaseContext());
         }
         else {
             showToast("Não encontrado nenhum pedido com esse exemplar", getBaseContext());
