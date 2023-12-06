@@ -139,7 +139,41 @@ public class BancoController {
         db.close();
         return cursor;
     }
+    public Cursor carregaPedidosPorIdExemplar(int idExemplar){
+        Cursor cursor;
+        String[] campos = { "idPedido", "idExemplar", "ra", "dataEntrega", "dataPedido"};
+        String filtro = "idExemplar='" + idExemplar + "'";
 
+        db = banco.getReadableDatabase();
+
+        cursor = db.query("pedido", campos, filtro,
+                null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        db.close();
+        return cursor;
+
+    }
+
+    public String encerrarPedidosPorId(int idExemplar){
+        String msg = "Registro Excluído" ;
+
+        db = banco.getReadableDatabase();
+
+        String condicao = "idExemplar = " + idExemplar ;
+
+        int linhas ;
+        linhas = db.delete("pedido", condicao, null) ;
+
+        if ( linhas < 1) {
+            msg = "Erro ao Excluir" ;
+        }
+
+        db.close();
+        return msg;
+    }
     public Cursor consultarExemplar(int idExemplar) {
         Cursor cursor;
         String[] campos = { "idExemplar", "isbn", "dataRecebida", "disponivel"};
