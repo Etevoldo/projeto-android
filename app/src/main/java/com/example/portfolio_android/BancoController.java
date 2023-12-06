@@ -109,6 +109,22 @@ public class BancoController {
         db.close();
         return cursor;
     }
+    public Cursor consultarDadosAluno(String ra) {
+        Cursor cursor;
+        String[] campos = { "ra", "nome", "email", "senha", "numeroDePedidos"};
+        String filtro = "ra='" + ra + "'";
+
+        db = banco.getReadableDatabase();
+
+        cursor = db.query("pessoa", campos, filtro,
+                null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        db.close();
+        return cursor;
+    }
     public Cursor consultarTodosExemplar() {
         Cursor cursor;
         String[] campos = { "idExemplar", "isbn", "dataRecebida", "disponivel"};
