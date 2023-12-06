@@ -15,6 +15,7 @@ import org.w3c.dom.Text;
 public class menu_activities extends AppCompatActivity implements View.OnClickListener {
 
     String ra, nome, email, senha , msg;
+    private static final String admRA = "321";
     int numeroDePedidos;
     TextView txtnomeUsuarioMenu;
     Button btBiblioteca, btEscanear, btMeusLivros, btLogOut, btSuporte;
@@ -38,6 +39,11 @@ public class menu_activities extends AppCompatActivity implements View.OnClickLi
         btLogOut = (Button) findViewById(R.id.btLogOut);
         btSuporte = (Button) findViewById(R.id.btSuporte);
         txtnomeUsuarioMenu = (TextView) findViewById(R.id.txtNomeUsuarioMenu);
+
+        if (ra.equals(admRA)){
+            btMeusLivros.setText("Pedidos");
+            txtnomeUsuarioMenu.setText("Administrador");
+        }
 
 
         btBiblioteca.setOnClickListener(this);
@@ -69,7 +75,11 @@ public class menu_activities extends AppCompatActivity implements View.OnClickLi
             startActivity(intent);
         }
         else if (view.getId() == R.id.btMeusLivros) {
-            Intent intent = new Intent(this, meusLivros.class);
+            Intent intent;
+            if (ra.equals(admRA))
+                intent = new Intent(this, pedidosAdm.class);
+            else
+                intent = new Intent(this, meusLivros.class);
             intent.putExtras(parameters);
             startActivity(intent);
         }
