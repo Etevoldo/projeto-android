@@ -82,6 +82,7 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
 
         if (data.moveToFirst()){
             bd.encerrarPedidosPorId(idExemplar); // perigo: encerra todos!
+            bd.resetarDisponibilidade(idExemplar);
             showToast("Pedido encerrado com Sucesso!", getBaseContext());
         }
         else {
