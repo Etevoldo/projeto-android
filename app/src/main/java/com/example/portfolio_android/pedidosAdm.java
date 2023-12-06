@@ -46,7 +46,7 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
         listaPedidos = consultarPedidos();
 
         PedidosListaAdapter adaptador = new PedidosListaAdapter(this, listaPedidos);
-        listaPedidos.setAdapter(adaptador);
+        lista.setAdapter(adaptador);
 
     }
 
