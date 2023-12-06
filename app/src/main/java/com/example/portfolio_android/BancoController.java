@@ -124,6 +124,21 @@ public class BancoController {
         db.close();
         return cursor;
     }
+    public Cursor consultarTodosPedido() {
+        Cursor cursor;
+        String[] campos = { "idPedido", "idExemplar", "ra", "dataEntrega", "dataPedido"};
+
+        db = banco.getReadableDatabase();
+
+        cursor = db.query("pedido", campos, null,
+                null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        db.close();
+        return cursor;
+    }
 
     public Cursor consultarExemplar(int idExemplar) {
         Cursor cursor;
