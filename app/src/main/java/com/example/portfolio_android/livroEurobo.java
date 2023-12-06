@@ -1,7 +1,10 @@
 package com.example.portfolio_android;
 
+import static com.example.portfolio_android.FuncoesAjuda.fazerPedido;
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -19,8 +22,9 @@ public class livroEurobo extends AppCompatActivity implements View.OnClickListen
     String ra, nome, email, senha;
     int numeroDePedidos;
 
-    Button reservar;
+    Button reservar, voltar;
     private static final String euRoboIsbn = "00001";
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,43 +38,27 @@ public class livroEurobo extends AppCompatActivity implements View.OnClickListen
         senha = parametros.getString("senha");
         numeroDePedidos = parametros.getInt("numeroDePedidos");
 
-        reservar = (Button) findViewById(R.id.btReservar1);
+        reservar = (Button) findViewById(R.id.btReservarlivro);
+        voltar = (Button) findViewById(R.id.btVoltarBiblioteca);
 
         reservar.setOnClickListener(this);
     }
 
     public void onClick(View view){
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        Calendar cal = Calendar.getInstance();
-        String pedidoData = sdf.format(cal.getTime());
+        Bundle parameters = new Bundle();
 
-        cal.add(Calendar.DATE, + 14);
-        String entregaData = sdf.format(cal.getTime());
+        parameters.putString("ra", ra);
+        parameters.putString("nome", nome);
+        parameters.putString("email", email);
+        parameters.putString("senha", senha);
+        parameters.putInt("numeroDePedidos", numeroDePedidos);
 
-        boolean resultado = false;
-        int idExemplar;
-
-        BancoController bd =  new BancoController(getBaseContext());
-
-        Cursor dados = bd.consultarDisponibilidadeExemplar(euRoboIsbn);
-
-        if (dados.moveToFirst()){
-            idExemplar = dados.getInt(0);
-            resultado = bd.inserirPedido(idExemplar, ra, entregaData, pedidoData);
+        if (view.getId() == R.id.btVoltarBiblioteca2){
+            Intent intent = new Intent(this, bibliotecaLivros.class);
+            intent.putExtras(parameters);
+            startActivity(intent);
         }
-        else {
-            showToast("Não há exemplares disponíveis");
-        }
-
-        if (resultado)
-            showToast("Pedido: " + pedidoData + "\nEntrega: " + entregaData);
         else
-            showToast("Erro ao inserir pedido");
-    }
-
-    public void showToast(String msg){
-        Context context = getApplicationContext();
-        int duracao = Toast.LENGTH_LONG;
-        Toast.makeText(context,msg, duracao).show();
+            fazerPedido(euRoboIsbn, ra, getBaseContext());
     }
 }
