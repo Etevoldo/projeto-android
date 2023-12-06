@@ -74,5 +74,18 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
 
     public void onClick(View view){
         showToast("something lol", getBaseContext());
+
+        int idExemplar = Integer.parseInt(edtEntregaConfirma.getText().toString());
+
+        BancoController bd = new BancoController(getBaseContext());
+
+        Cursor data = bd.carregaPedidosPorIdExemplar(idExemplar);
+
+        if (data.moveToFirst()){
+            bd.encerrarPedidosPorId(idExemplar); // perigo: encerra todos!
+        }
+        else {
+            showToast("Não encontrado nenhum pedido com esse exemplar", getBaseContext());
+        }
     }
 }
