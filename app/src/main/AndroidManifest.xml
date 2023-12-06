@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Portfolio_android"
         tools:targetApi="31">
         <activity
+            android:name=".pedidosAdm"
+            android:exported="false" />
+        <activity
             android:name=".livroUmLugar"
             android:exported="false" />
         <activity
