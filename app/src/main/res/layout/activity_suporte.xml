@@ -7,20 +7,25 @@
     android:layout_margin="80px">
 
     <TextView
-        android:textSize="80px"
-        android:layout_width="wrap_content"
+        android:id="@+id/txtFig2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Quem somos" />
+        android:background="#044476"
+        android:gravity="center"
+        android:text="Suporte E-Biblio"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#fffcd0"
+        android:textSize="80px" />
+
     <TextView
-        android:layout_marginTop="100px"
+        android:id="@+id/Suporte"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:id="@+id/Suporte"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim massa, ultrices nec rutrum et, volutpat eget lorem. Aliquam erat volutpat. Mauris lobortis rutrum dignissim. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed ullamcorper sem viverra interdum placerat. Nulla eu vehicula leo, maximus eleifend metus. Vivamus quis felis commodo, faucibus justo at, aliquet sapien. Ut ut nulla velit. Nam ex massa, dapibus "
-        android:textSize="16dp"
-        android:justificationMode="inter_word"/>
+        android:layout_marginTop="100px"
+        android:justificationMode="inter_word"
+        android:text="Caro aluno, pedimos desculpas pelo incoveniente, pedimos que se dirija a secretaria e reporte o problema ou nos contate via Ramal 1010 ou (11) 91234-1234. Sempre estamos em busca de melhorar, logo conseguiremos resolver seu problema."
+        android:textSize="20dp" />
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:layout_width="280dp"
         android:layout_height="200dp"

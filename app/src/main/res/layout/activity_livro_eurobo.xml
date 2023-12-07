@@ -18,13 +18,15 @@
             android:textColor="@color/black"
             android:textSize="30dp"
             android:background="@color/green"/>
+
         <ImageView
             android:id="@+id/imgEurobo2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             android:layout_marginVertical="50dp"
             android:layout_marginLeft="100dp"
             android:src="@drawable/eurobocapa" />
+
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
@@ -40,28 +42,29 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
 
             <Button
                 android:id="@+id/btReservarlivro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:background="#044476"
                 android:text="Reservar"
                 android:textColor="@android:color/black"
-                android:textSize="80px"/>
+                android:textSize="80px" />
+
             <Button
                 android:id="@+id/btVoltarBiblioteca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:background="#044476"
                 android:text="Voltar"
                 android:textColor="@android:color/black"
-                android:textSize="80px"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="20dp"/>
+                android:textSize="80px" />
         </LinearLayout>
 
     </LinearLayout>

@@ -44,45 +44,49 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="RA"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="80px" />
+
     <EditText
         android:id="@+id/lblLogin"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
         android:layout_marginLeft="150px"
-        android:layout_marginRight="150px"
         android:layout_marginTop="1px"
-        android:background="@color/white"
-        android:textColor="@color/black"
+        android:layout_marginRight="150px"
+        android:background="@color/ice"
         android:inputType="text"
+        android:textColor="@color/black"
         android:textSize="80px" />
+
     <TextView
         android:id="@+id/txtSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Senha"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="80px" />
+
     <EditText
         android:id="@+id/lblSenha"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="150px"
         android:layout_marginRight="150px"
-        android:background="@color/white"
-        android:textColor="@color/black"
+        android:background="@color/ice"
         android:inputType="text"
+        android:textColor="@color/black"
         android:textSize="80px" />
+
     <TextView
         android:id="@+id/txtEsqueciSenha"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Esqueci a senha"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="70px" />
 
     <Button
@@ -92,9 +96,10 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginVertical="10dp"
         android:backgroundTint="#044476"
-        android:textColor="@android:color/black"
         android:text="Login"
+        android:textColor="@color/white"
         android:textSize="90px" />
+
     <Button
         android:id="@+id/btnCadastre"
         android:layout_width="wrap_content"
@@ -102,7 +107,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginVertical="20dp"
         android:backgroundTint="#044476"
-        android:textColor="@android:color/black"
         android:text="Cadastre-se"
+        android:textColor="@color/white"
         android:textSize="90px" />
 </LinearLayout>

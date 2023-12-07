@@ -40,31 +40,33 @@ Escrito por Arthur C. Clarke com o intuito de expandir a história criada com St
             android:textSize="60px"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
+
             <Button
                 android:id="@+id/btReservarOdisseia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="70dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:background="@color/dark_blue"
                 android:text="Reservar"
-                android:textColor="@android:color/black"
-                android:textSize="80px"/>
+                android:textColor="@color/white"
+                android:textSize="80px" />
+
             <Button
                 android:id="@+id/btVoltarBiblioteca2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:layout_marginTop="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:background="@color/dark_blue"
                 android:text="Voltar"
-                android:textColor="@android:color/black"
-                android:textSize="80px"/>
+                android:textColor="@color/white"
+                android:textSize="80px" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>
