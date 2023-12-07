@@ -9,30 +9,40 @@ import java.util.Calendar;
 
 public class FuncoesAjuda {
 
+    private static final int semana = 7;
+
     public static void fazerPedido(String isbn, String ra, Context context ){
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
         Calendar cal = Calendar.getInstance();
         String pedidoData = sdf.format(cal.getTime());
 
-        cal.add(Calendar.DATE, +14);
+        cal.add(Calendar.DATE, + semana * 2);
         String entregaData = sdf.format(cal.getTime());
 
-        boolean resultado = true;
+        boolean resultInserir, resultAlterar;
         int idExemplar;
 
         BancoController bd = new BancoController(context);
 
         Cursor dados = bd.consultarDisponibilidadeExemplar(isbn);
-
         if (dados.moveToFirst()) {
             idExemplar = dados.getInt(0);
-            resultado = bd.inserirPedido(idExemplar, ra, entregaData, pedidoData);
+            resultInserir = bd.inserirPedido(idExemplar, ra, entregaData, pedidoData);
         } else {
             showToast("Não há exemplares disponíveis!", context);
             return;
         }
 
-        if (resultado)
+        Cursor dadosAluno = bd.consultarDadosAluno(ra);
+        if (dados.moveToFirst()){
+            resultAlterar = bd.alterarNumeroPedidos(ra, (dadosAluno.getInt(4) + 1));
+        }
+        else {
+            showToast("Erro ao encontrar aluno", context);
+            return;
+        }
+
+        if (resultInserir && resultAlterar)
             showToast("Pedido: " + pedidoData + "\nEntrega: " + entregaData
                      + "\nFeito com sucesso", context);
         else
