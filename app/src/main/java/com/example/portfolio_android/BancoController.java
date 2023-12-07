@@ -13,28 +13,6 @@ public class BancoController {
         banco = new CriaBanco(context);
     }
 
-    public String inserePedido(int idPedido, int idExemplar, String ra,
-                               String dataEntrega, String dataPedido) {
-        ContentValues valores;
-        long resultado;
-        db = banco.getWritableDatabase();
-
-        valores = new ContentValues();
-        valores.put("idPedido", idPedido);
-        valores.put("idExemplar", idExemplar);
-        valores.put("ra", ra);
-        valores.put("dataEntrega", dataEntrega);
-        valores.put("dataPedido", dataPedido);
-
-        resultado = db.insert("pedido", null, valores);
-        db.close();
-
-        if (resultado == -1)
-            return "Erro ao inserir registro";
-        else
-            return "Registro Inserido com sucesso";
-    }
-
     public String insereDadosUsuario(String nome, String email, String senha, String ra) {
         ContentValues valores;
         long resultado;
@@ -173,8 +151,7 @@ public class BancoController {
 
     }
 
-    public String encerrarPedidosPorId(int idExemplar){
-        String msg = "Registro Excluído" ;
+    public boolean encerrarPedidosPorId(int idExemplar){
 
         db = banco.getReadableDatabase();
 
@@ -183,12 +160,11 @@ public class BancoController {
         int linhas ;
         linhas = db.delete("pedido", condicao, null) ;
 
-        if ( linhas < 1) {
-            msg = "Erro ao Excluir" ;
-        }
-
         db.close();
-        return msg;
+        if ( linhas < 1)
+            return false;
+        else
+            return true;
     }
     public Cursor consultarExemplar(int idExemplar) {
         Cursor cursor;
@@ -266,44 +242,44 @@ public class BancoController {
         return cursor;
     }
     //coloca o exemplares de um certo id como disponivel
-    public String resetarDisponibilidade(int idExemplar){
-
-        String msg = "Dados database resetada com sucesso!!!";
+    public boolean resetarDisponibilidade(int idExemplar){
 
         db = banco.getReadableDatabase();
 
         ContentValues valores = new ContentValues();
         valores.put("disponivel", "1");
 
-        String condicao = "disponivel = " + "0";
+        String condicao = "idExemplar = " + idExemplar;
 
         int linha ;
         linha = db.update("exemplar", valores, condicao, null);
 
-        if (linha < 1){
-            msg = "Erro ao alterar os dados";
-        }
-
         db.close();
-        return msg;
+
+        if (linha < 1){
+            return false;
+        }
+        else return true;
+
     }
-    //apenas de referencia
-    public String excluirDados(int id){
-        String msg = "Registro Excluído" ;
+
+    public boolean alterarNumeroPedidos(String ra, int numeroDePedidos){
+
+        String msg = "Dados database resetada com sucesso!!!";
 
         db = banco.getReadableDatabase();
 
-        String condicao = "codigo = " + id ;
+        ContentValues valores = new ContentValues();
+        valores.put("numeroDePedidos", numeroDePedidos);
 
-        int linhas ;
-        linhas = db.delete("contatos", condicao, null) ;
+        String condicao = "ra = " + ra;
 
-        if ( linhas < 1) {
-            msg = "Erro ao Excluir" ;
-        }
+        int linha ;
+        linha = db.update("pessoa", valores, condicao, null);
 
         db.close();
-        return msg;
+
+        return linha >= 1;
     }
 
 }
