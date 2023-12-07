@@ -150,6 +150,40 @@ public class BancoController {
         return cursor;
 
     }
+    public Cursor consultarLivroPorIsbn(String isbn){
+        Cursor cursor;
+        String[] campos = { "isbn", "titulo", "autor"};
+        String filtro = "isbn='" + isbn + "'";
+
+        db = banco.getReadableDatabase();
+
+        cursor = db.query("livro", campos, filtro,
+                null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        db.close();
+        return cursor;
+
+    }
+    public Cursor consultarPedidosRa(String ra){
+        Cursor cursor;
+        String[] campos = { "idPedido", "idExemplar", "ra", "dataEntrega", "dataPedido"};
+        String filtro = "ra='" + ra + "'";
+
+        db = banco.getReadableDatabase();
+
+        cursor = db.query("pedido", campos, filtro,
+                null, null, null, null, null);
+        if (cursor != null) {
+            cursor.moveToFirst();
+        }
+
+        db.close();
+        return cursor;
+
+    }
 
     public boolean encerrarPedidosPorId(int idExemplar){
 

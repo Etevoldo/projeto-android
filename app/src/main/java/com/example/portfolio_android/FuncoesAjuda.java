@@ -2,7 +2,10 @@ package com.example.portfolio_android;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.drawable.Drawable;
 import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -47,6 +50,16 @@ public class FuncoesAjuda {
                      + "\nFeito com sucesso", context);
         else
             showToast("Erro ao inserir pedido", context);
+    }
+
+    public static int fetchCover(String isbn) {
+        String name;
+        switch (isbn) {
+            case "00001": return R.drawable.eurobocapa;
+            case "00002": return R.drawable.umaodisseia;
+            case "00003": return R.drawable.umlugar;
+            default: return R.drawable.ebiblio;
+        }
     }
 
     public static void showToast(String msg, Context context){
