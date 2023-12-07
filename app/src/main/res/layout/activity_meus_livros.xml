@@ -4,21 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cyan"
-    android:orientation="vertical"
-    android:layout_margin="80px">
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/txtNomeMeusLivros"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="50dp"
+        android:textAlignment="center"
         android:textSize="30dp"
         android:text="userName"/>
 
     <ListView
-        android:id="@+id/listPessoas"
+        android:id="@+id/listMeusLivros"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="match_parent"
         android:divider="#FFECEC"
         android:dividerHeight="2dp" />
 
