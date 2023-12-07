@@ -84,17 +84,27 @@ public class menu_activities extends AppCompatActivity implements View.OnClickLi
             startActivity(intent);
         }
         else if (view.getId() == R.id.btLogOut) { // temporario
-            Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
-            /*
             Intent intent = new Intent(this, MainActivity.class);
             intent.putExtras(parameters);
             startActivity(intent);
-             */
 
+            /* debug
             BancoController bd =  new BancoController(getBaseContext());
             bd.resetarDisponibilidade(1);
             bd.resetarDisponibilidade(3);
             bd.resetarDisponibilidade(2);
+            bd.alterarNumeroPedidos("123", 0);
+            bd.alterarNumeroPedidos("321", 0);
+            bd.encerrarPedidosPorId(1);
+            bd.encerrarPedidosPorId(2);
+            bd.encerrarPedidosPorId(3);
+            bd.encerrarPedidosPorId(4);
+            bd.encerrarPedidosPorId(5);
+            bd.encerrarPedidosPorId(6);
+            msg = "Dados resetados";
+            Toast.makeText(getApplicationContext(),msg,Toast.LENGTH_LONG).show();
+             */
+
         }
         else if (view.getId() == R.id.btSuporte) {
             Intent intent = new Intent(this, suporte.class);
