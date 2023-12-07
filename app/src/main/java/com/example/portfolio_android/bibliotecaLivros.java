@@ -14,6 +14,7 @@ public class bibliotecaLivros extends AppCompatActivity implements View.OnClickL
     String ra, nome, email, senha , msg;
     int numeroDePedidos;
     ImageView btImg1, btImg2, btImg3;
+    Button voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,10 +32,12 @@ public class bibliotecaLivros extends AppCompatActivity implements View.OnClickL
         btImg1 = (ImageView) findViewById(R.id.imgEurobo);
         btImg2 = (ImageView) findViewById(R.id.imgOdisseia);
         btImg3 = (ImageView) findViewById(R.id.imgUmlugar);
+        voltar = (Button) findViewById(R.id.btVoltar);
 
         btImg1.setOnClickListener(this);
         btImg2.setOnClickListener(this);
         btImg3.setOnClickListener(this);
+        voltar.setOnClickListener(this);
     }
 
     public void onClick(View view){
@@ -59,6 +62,11 @@ public class bibliotecaLivros extends AppCompatActivity implements View.OnClickL
         }
         else if (view.getId() == R.id.imgUmlugar) {
             Intent intent = new Intent(this, livroUmLugar.class);
+            intent.putExtras(parameters);
+            startActivity(intent);
+        }
+        else if (view.getId() == R.id.btVoltar) {
+            Intent intent = new Intent(this, bibliotecaLivros.class);
             intent.putExtras(parameters);
             startActivity(intent);
         }

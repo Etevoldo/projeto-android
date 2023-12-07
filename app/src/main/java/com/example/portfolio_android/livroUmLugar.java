@@ -38,9 +38,10 @@ public class livroUmLugar extends AppCompatActivity implements View.OnClickListe
 
 
         reservar = (Button) findViewById(R.id.btReservarUmlugar);
-        voltar = (Button) findViewById(R.id.btVoltarBiblioteca2);
+        voltar = (Button) findViewById(R.id.btVoltarBiblioteca3);
 
         reservar.setOnClickListener(this);
+        voltar.setOnClickListener(this);
     }
 
     public void onClick(View view){
@@ -52,12 +53,12 @@ public class livroUmLugar extends AppCompatActivity implements View.OnClickListe
         parameters.putString("senha", senha);
         parameters.putInt("numeroDePedidos", numeroDePedidos);
 
-        if (view.getId() == R.id.btVoltarBiblioteca2){
+        if (view.getId() == R.id.btVoltarBiblioteca3){
             Intent intent = new Intent(this, bibliotecaLivros.class);
             intent.putExtras(parameters);
             startActivity(intent);
         }
-        else {
+        else if (view.getId() == R.id.btReservarUmlugar){
             fazerPedido(umLugarIsbn, ra, getBaseContext());
         }
     }

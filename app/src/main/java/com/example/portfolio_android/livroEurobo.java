@@ -42,6 +42,7 @@ public class livroEurobo extends AppCompatActivity implements View.OnClickListen
         voltar = (Button) findViewById(R.id.btVoltarBiblioteca);
 
         reservar.setOnClickListener(this);
+        voltar.setOnClickListener(this);
     }
 
     public void onClick(View view){
@@ -53,12 +54,13 @@ public class livroEurobo extends AppCompatActivity implements View.OnClickListen
         parameters.putString("senha", senha);
         parameters.putInt("numeroDePedidos", numeroDePedidos);
 
-        if (view.getId() == R.id.btVoltarBiblioteca2){
+        if (view.getId() == R.id.btVoltarBiblioteca){
             Intent intent = new Intent(this, bibliotecaLivros.class);
             intent.putExtras(parameters);
             startActivity(intent);
         }
-        else
+        else if (view.getId() == R.id.btReservarlivro){
             fazerPedido(euRoboIsbn, ra, getBaseContext());
+        }
     }
 }

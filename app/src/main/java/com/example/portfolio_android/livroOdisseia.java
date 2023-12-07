@@ -39,6 +39,7 @@ public class livroOdisseia extends AppCompatActivity implements View.OnClickList
         voltar = (Button) findViewById(R.id.btVoltarBiblioteca2);
 
         reservar.setOnClickListener(this);
+        voltar.setOnClickListener(this);
     }
 
     public void onClick(View view){
@@ -55,7 +56,7 @@ public class livroOdisseia extends AppCompatActivity implements View.OnClickList
             intent.putExtras(parameters);
             startActivity(intent);
         }
-        else {
+        else if (view.getId() == R.id.btReservarOdisseia){
             fazerPedido(umaOdisseiaIsbn, ra, getBaseContext());
         }
     }
