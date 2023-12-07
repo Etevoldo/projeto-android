@@ -55,7 +55,7 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
         BancoController bd = new BancoController(getBaseContext());
         Cursor dados = bd.consultarTodosPedido();
 
-        if (dados != null) {
+        if (dados.moveToFirst()) {
             do {
                 pedido item = new pedido();
                 item.setIdPedido(dados.getInt(0));
@@ -67,7 +67,7 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
             } while (dados.moveToNext()); //retorna 0 quando acaba
         }
         else {
-            showToast("Não há nenhum exemplar cadastrado", getBaseContext());
+            showToast("Não há nenhum exemplar emprestado", getBaseContext());
         }
         return lista;
     }
@@ -78,15 +78,41 @@ public class pedidosAdm extends AppCompatActivity implements View.OnClickListene
 
         BancoController bd = new BancoController(getBaseContext());
 
+        boolean resPedido, resDis, resNumPed; // booleans pra detectar erros
+
         Cursor data = bd.carregaPedidosPorIdExemplar(idExemplar);
 
         if (data.moveToFirst()){
-            bd.encerrarPedidosPorId(idExemplar); // perigo: encerra todos!
-            bd.resetarDisponibilidade(idExemplar);
-            showToast("Pedido encerrado com Sucesso!", getBaseContext());
+            resPedido = bd.encerrarPedidosPorId(idExemplar); // perigo: encerra todos!
+            resDis =  bd.resetarDisponibilidade(idExemplar);
         }
         else {
             showToast("Não encontrado nenhum pedido com esse exemplar", getBaseContext());
+            return;
+        }
+
+        // pegar o ra do pedido...
+        String raDoPedido = data.getString(2);
+        //... para consultar quantos pedidos quem fez tem
+        Cursor dataAluno = bd.consultarDadosAluno(raDoPedido);
+        int pedidosAluno;
+        if (data.moveToFirst()) {
+             pedidosAluno = dataAluno.getInt(4);
+            if (pedidosAluno > 0 )
+                resNumPed =  bd.alterarNumeroPedidos(raDoPedido, pedidosAluno - 1);
+            else {
+                showToast("Algo de errado com o contador", getBaseContext());
+                resNumPed = bd.alterarNumeroPedidos(raDoPedido, 0);
+            }
+        }
+        else{
+            resNumPed = false;
+        }
+
+        if (resPedido && resDis && resNumPed)
+            showToast("Pedido encerrado com Sucesso!", getBaseContext());
+        else {
+            showToast("Algum erro ocorreu", getBaseContext());
         }
     }
 }
